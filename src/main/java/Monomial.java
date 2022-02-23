@@ -6,6 +6,10 @@ public class Monomial {
         this.coef = coef;
         this.pow = pow;
     }
+    public Monomial(Monomial copy) {
+        this.coef = copy.getCoef();
+        this.pow = copy.getPow();
+    }
 
     public int getPow() {
         return pow;
