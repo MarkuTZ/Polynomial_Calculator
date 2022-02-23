@@ -26,4 +26,16 @@ public class Monomial {
     public void setPow(int pow) {
         this.pow = pow;
     }
+
+    public static Monomial mul(Monomial a, Monomial b) {
+        return new Monomial(
+                a.getCoef() * b.getCoef(),
+                a.getPow() + b.getPow()
+        );
+    }
+
+    @Override
+    public String toString() {
+        return coef + "X^" + pow;
+    }
 }
