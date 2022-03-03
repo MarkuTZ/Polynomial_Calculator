@@ -52,9 +52,9 @@ public class Polynomial {
         String buff = "";
         for (Monomial mon: monomialList) {
             if (mon.getCoef() == Math.rint(mon.getCoef())) //Check if the coefficient is an integer, so we won't print Y.0 only Y
-                buff += (mon.getCoef() < 0 ? " " : " +") + (int)mon.getCoef();
+                buff += (mon.getCoef() < 0 ? " " : "+") + (int)mon.getCoef();
             else
-                buff += (mon.getCoef() < 0 ? " " : " +") + mon.getCoef();
+                buff += (mon.getCoef() < 0 ? " " : "+") + mon.getCoef();
 
             if (mon.getPow() == 1) // Getting rid of "aX^0" and "aX^1", replacing them with the more natural "a" and "aX"
                 buff += "X";
