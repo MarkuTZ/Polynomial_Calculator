@@ -61,13 +61,13 @@ public interface Operations {
     }
 
     static LinkedList<Polynomial> divPolynomials(Polynomial p1, Polynomial p2) {
-        if (p2.getDegree() == -1) //Means that we have no monomials in p2
-            return null;
+
 
         //P(X) = B(X)*Q(X) + R(X)
         Polynomial P = new Polynomial(p1.getMonomialList()); // DIVIDEND
         Polynomial B = new Polynomial(p2.getMonomialList()); // DIVISOR
         Polynomial Q = new Polynomial(); // QUOTIENT
+        LinkedList<Polynomial> pairOfPolynomials = new LinkedList<>();
 
         while (P.getDegree() >= B.getDegree()) {
             Monomial q = new Monomial(
@@ -77,7 +77,6 @@ public interface Operations {
             Q.addMonomial(q);
             P = subPolynomials(P, mulPolynomialMonomial(B, q));
         }
-        LinkedList<Polynomial> pairOfPolynomials = new LinkedList<>();
         pairOfPolynomials.add(Q);
         pairOfPolynomials.add(P);
         return pairOfPolynomials;
@@ -108,8 +107,8 @@ public interface Operations {
     static Polynomial toPolynomial(String input) {
         Polynomial newP = new Polynomial();
 
-        Pattern p = Pattern.compile("([+-]?\\d*)x(\\^(\\d+))?|([+-]\\d+)");
-        input = input.replace(" ", "").toLowerCase();
+        Pattern p = Pattern.compile("([-+]?[0-9]*\\.?[0-9]*)x(\\^(\\d+))?|([-+]?[0-9]*\\.?[0-9]+)");
+        input = input.replace(" ", "").toLowerCase().replace(",",".");
         Matcher matcher = p.matcher(input);
 
         while (matcher.find()) {
