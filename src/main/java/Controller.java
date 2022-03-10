@@ -90,7 +90,7 @@ public class Controller implements ActionListener {
                 view.setResult("Q:" + CR.getFirst().toString());
                 view.setRest("R:" + CR.getLast().toString());
             }
-            case "Derivation" -> {
+            case "Derivative" -> {
                 if (p1String.equals("") && p2String.equals("")) {
                     JOptionPane.showMessageDialog(view.getContentPane(),
                             "Enter at least one polynomial!!",
@@ -103,7 +103,7 @@ public class Controller implements ActionListener {
                 view.setResult("D1:" + ((p1String.equals("")) ? "Polynomial not introduced! " : Operations.derPolynomial(p1)));
                 view.setRest("D2:" + ((p2String.equals("")) ? "Polynomial not introduced! " : Operations.derPolynomial(p2)));
             }
-            case "Integration" -> {
+            case "Integral" -> {
                 if (p1String.equals("") && p2String.equals("")) {
                     JOptionPane.showMessageDialog(view.getContentPane(),
                             "Enter at least one polynomial!!",

@@ -157,7 +157,7 @@
               </grid>
             </constraints>
             <properties>
-              <text value="Integration"/>
+              <text value="Integral"/>
             </properties>
           </component>
           <component id="66242" class="javax.swing.JButton" binding="buttonDer">
@@ -167,7 +167,7 @@
               </grid>
             </constraints>
             <properties>
-              <text value="Derivation"/>
+              <text value="Derivative"/>
             </properties>
           </component>
         </children>

@@ -62,7 +62,6 @@ public interface Operations {
 
     static LinkedList<Polynomial> divPolynomials(Polynomial p1, Polynomial p2) {
 
-
         //P(X) = B(X)*Q(X) + R(X)
         Polynomial P = new Polynomial(p1.getMonomialList()); // DIVIDEND
         Polynomial B = new Polynomial(p2.getMonomialList()); // DIVISOR

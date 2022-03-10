@@ -18,37 +18,6 @@ public class Polynomial {
         }
     }
 
-    public static void main(String[] args) {
-        //opTest();
-        //stringToPolynomialTest();
-    }
-
-    public static void opTest() {
-        Polynomial p1 = new Polynomial();
-        p1.addMonomial(new Monomial(2, 0));
-        p1.addMonomial(new Monomial(1, 4));
-        p1.addMonomial(new Monomial(6, 2));
-
-        Polynomial p2 = new Polynomial();
-        p2.addMonomial(new Monomial(6, 0));
-        p2.addMonomial(new Monomial(1, 2));
-
-        System.out.println(p1);
-        System.out.println(p2);
-
-        System.out.println("SUM:" + Operations.addPolynomials(p1, p2));
-        System.out.println("SUB:" + Operations.subPolynomials(p1, p2));
-        System.out.println("MUL:" + Operations.mulPolynomials(p1, p2));
-
-        LinkedList<Polynomial> divRes = Operations.divPolynomials(p1, p2);
-        System.out.println("DIV: Q(X): " + divRes.get(0) + " R(X): " + divRes.get(1));
-    }
-
-    public static void stringToPolynomialTest() {
-        String input = "123X^40+X^30-2.5X^35-6X^2+3X+2";
-        System.out.println(Operations.toPolynomial(input));
-    }
-
     public List<Monomial> getMonomialList() {
         return monomialList;
     }
